@@ -930,6 +930,7 @@ describe('Input/output', function () {
       .toFile(fixtures.outputTiff, (err, info) => {
         if (err) throw err;
         assert.strictEqual('tiff', info.format);
+        console.log('info.size', info.size, 'startSize', startSize);
         assert(info.size === startSize);
         fs.unlink(fixtures.outputTiff, done);
       });
@@ -947,6 +948,7 @@ describe('Input/output', function () {
       .toFile(fixtures.outputTiff, (err, info) => {
         if (err) throw err;
         assert.strictEqual('tiff', info.format);
+        console.log('info.size', info.size, 'startSize', startSize);
         assert(info.size < (startSize / 2));
         fs.unlink(fixtures.outputTiff, done);
       });
